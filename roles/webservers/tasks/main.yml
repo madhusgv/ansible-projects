@@ -1,5 +1,10 @@
 ---
 # tasks file for webservers
+  - name: copy start.sh
+    copy:
+       src: start.sh
+       dest: /home/madhu/
+       mode: preserve
   - name: execute start.sh
     shell: /home/madhu/start.sh
     register: scriptoutput
