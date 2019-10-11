@@ -1,14 +1,8 @@
 ---
 # tasks file for webservers
-  - name: Ensure group deploy exists
-    group:
-       name: deloitte
-       state: present
-
-  - name: Ensure user deploy-user exists
-    user:
-       name: deploy-user
-       state: present
+  - name: execute start.sh
+    shell: /home/madhu/start.sh
+    register: scriptoutput
 
 #  - name: install packages
 #    yum:
@@ -22,3 +16,4 @@
   - name: Ansible variables
     debug:
        msg: "{{myname}}"
+       msg: "{{scriptoutput}}"
