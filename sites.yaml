@@ -1,4 +1,6 @@
 # file: webservers.yml
 - hosts: localhost
+  vars:
+    myname: "Madhu in playbook"
   roles:
     - webservers
